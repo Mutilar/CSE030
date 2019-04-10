@@ -1,0 +1,94 @@
+Brian Hungerman
+CSE30:HW2
+
+1)	Function Call		Output		Stack Contents (bottom->top)
+	push('C')		---		C
+	size()			1		C
+	top()			C		C
+	pop()			---		---
+	empty()			TRUE		---
+	push('S')		---		S
+	push('E')		---		S,E
+	pop()			---		S
+	top()			S		S
+	empty()			FALSE		S
+
+2)	Function Call		Output		Stack Contents (rear->front)
+	size()			0		---	
+	enqueue(1)		---		1
+	front()			1		1
+	dequeue()		---		---
+	enqueue(3)		---		3
+	enqueue(5)		---		3,5
+	empty()			FALSE		3,5
+	dequeue()		---		5
+	front()			5		5
+	empty()			FALSE		5		
+
+3)
+	a) Yes, it is a binary tree. Every node either has zero or two children.
+	b) Depth of '7': 2
+	   Height of '7': 1
+	c) Postorder traversal: 4,5,2,6,8,9,7,3,1
+	d) Preorder traversal: 1,2,4,5,3,6,7,8,9
+	e) Internal nodes: 1, 2, 3, 7
+
+4)
+	a)
+		 0   1   2   3   4   5   6   7	 8   9   10
+		[ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+		    12  -44     13  94      -20     11
+		    23  -88         39
+			 16
+			 5
+		
+	b)
+		 0   1   2   3   4   5   6   7	 8   9   10
+		[ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]
+		5   12	-44 -88 13  23  94  39	-20 11  16
+			
+	c) No, if you use mod 11, there will always be collisions regardless of the size of the array.
+
+5)
+	a) height: 5
+	b) The key at the root of the tree is 'P'
+	c) There are 8 leaves
+	d) The key of the sibling of the node with the key of 'S' is 'M'
+	e) 4
+	f) 15 nodes * sizeof(node) 
+	   sizeof(node) = 2*sizeof(node*) + sizeof(char) + sizeof(int) = 2(8)+1+4 = 21 (sizes according to "sizeof")
+	   required bytes = 315
+	g) Because the left is heavier, do a right rotation so that M goes to the root position and P 
+	   becomes a child of M along with L. This makes it more balanced, with 3 nodes on either side of 'M'
+
+6)
+	a) See file attached
+	b) A(1)->B(2)->D(3)->C(4)->E(5)->F(6)
+			     |	   |
+			     H(8)  G(7)
+
+	   (A1,B2,D3,C4,E5,F6,G7,H8)
+	c) A(1)->B(2)->D(5)->G(8)
+	   |     \   ->E(6)
+	   |   ->F(3)
+           \   ->H(4)->C(7)
+	
+	   (A1,B2,F3,H4,D5,E6,C7,G8)
+	   
+7)
+	a) Returns void
+	   Arguments: character, Node pointer
+	b) Returns void
+	   Argument: character
+	c) Returns: character
+	   Argument: none
+	d) Returns: void
+	   Argument: Node pointer
+	e) Returns: reference of a character
+	   Argument: none
+	f) Returns: Reference to the value of a pointer
+	   Argument: none
+
+		
+
+

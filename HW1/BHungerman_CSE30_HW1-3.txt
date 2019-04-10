@@ -1,0 +1,108 @@
+Brian Hungerman: CSE30 Homework 1
+
+1.a)		Big-O of growth rates
+	4nlog(n)+2n	-> nlog(n) 
+	2^10		-> 1
+	2^log(n)	-> 2^log(n)
+	3n+100log(n)	-> log(n)
+	4n		-> n
+	2^n		-> 2^n
+	n^2+10n		-> n^2
+	n^3		-> n^3
+	nlog(n^2)	-> nlog(n^2)
+
+1.b)		Rates in ascending order
+	1
+	log(n)
+	2^log(n)
+	n
+	nlog(n)
+	nlog(n^2)
+	n^2
+	n^3
+	2^n
+	
+2.a)	Big-O memory of algorithm: O(n)		(assuming values passed to method count towards memory of method) 
+	
+2.b)	Executed 1/2(n) - 2 times
+
+2.c)	Big-O time of algorithm : O(n)
+
+2.d)	Best case : O(1), worst case O(n)
+
+
+3)	PrintS(3,S,U)
+	
+	For each e in U, calls:
+		PrintS(2,A,{B,C})
+			For each e in U, calls:
+				PrintS(1,AB,{C})
+					Print ABC	
+				PrintS(1,AC,{B})
+					Print ACB	
+		PrintS(2,B,{A,C})
+			For each e in U, calls:
+				PrintS(1,BA,{C})
+					Print BAC	
+				PrintS(1,BC,{A})
+					Print BCA	
+		PrintS(2,C,{A,B})
+			For each e in U, calls:	
+				PrintS(1,CA,{B})
+					Print CAB	
+				PrintS(1,CB,{A})
+					Print CBA
+	
+	Printouts of S: (see above), but condensed to:
+		ABC, ACB, BAC, BCA, CAB, CBA
+4)
+	bool isValidDay(int month, int day, int year)
+	{
+		int days_max = 0;
+		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		{
+			days_max = 31;
+		}
+		else if (month == 4 || month == 6 || month == 9 || month == 11)
+		{
+			days_max = 30;
+		}
+		else if (month == 2)
+		{
+			if (year % 4 == 0)
+			{
+				if (year % 400 == 0)
+				{
+					days_max = 29;
+				}
+				else if (year % 100 == 0)
+				{
+					days_max = 28;
+				}
+				else
+				{
+					days_max = 29;
+				}
+			}
+		}
+		else return false;	//If month isn't within (1-12)
+		
+		if (days > 0 && days <= days_max)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+5.a)	"a" passed by reference
+
+5.b) 	"b" passed by reference
+
+5.c)	"c" passed by value
+
+5.d)	Output for f(x) = 0 is 1
+
+5.e) 	Output from f(5) = 8

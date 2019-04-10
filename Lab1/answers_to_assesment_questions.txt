@@ -1,0 +1,6 @@
+CSE30_Lab1
+(Assessment) Logic Check
+1) g++ main.cpp -o cselab
+2) it names the file time to a.out, not specific to the program
+3) put "std::" in front of every cout in the program
+
